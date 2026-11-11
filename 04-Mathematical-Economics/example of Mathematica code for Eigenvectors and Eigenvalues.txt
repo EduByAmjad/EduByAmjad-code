@@ -1,0 +1,14 @@
+Following is an example of Mathematica code for Eigenvectors and Eigenvalues
+
+A={{1.1,0.1},{0.1,0.7}};
+Eigenvalues[A]
+Eigenvectors[A]
+lambda=(9+Sqrt[5])/10.
+vUnstable=Normalize[{1,Sqrt[5]-2.}]
+x0=0.25 vUnstable
+states=Table[MatrixPower[A,t].x0,{t,0,12}]
+Manipulate[ListLinePlot[Take[states,k],PlotMarkers->Automatic,PlotStyle->{Red,Thick},Axes->True,AxesOrigin->{0,0},AxesLabel->{"GDP Growth Deviation","Inflation Deviation"},PlotRange->{{-0.2,2},{-0.2,0.5}},Epilog->{Black,PointSize[0.02],Point[{0,0}],Text["Equilibrium",{-0.05,-0.08}],Red,PointSize[0.025],Point[states[[k]]]},GridLines->Automatic,ImageSize->Large],{k,2,Length[states],1}]
+Animate[Pane[ListLinePlot[Take[states,k],PlotMarkers->Automatic,PlotStyle->{Red,Thick},Axes->True,AxesOrigin->{0,0},AxesLabel->{Style["GDP Growth Deviation",Bold,12],Style["Inflation Deviation",Bold,12]},PlotRange->{{-0.2,2},{-0.2,0.5}},Epilog->{Black,PointSize[0.02],Point[{0,0}],Text[Style["Equilibrium",Bold,12],{-0.04,-0.05}],Red,PointSize[0.025],Point[states[[k]]]},GridLines->Automatic,ImageSize->600],{600,350},(*forces full width*)Alignment->Center],{k,2,Length[states],1},ControlPlacement->Top,AnimationRate->1,AnimationRunning->False]
+Pane[Manipulate[Show[ListLinePlot[Table[{t,lambda^t},{t,0,k}],PlotStyle->{Red,Thick},PlotMarkers->Automatic,AxesLabel->{Style["Time (t)",Bold,12],Style["Size of Dynamic Mode",Bold,12]},PlotRange->{{0,13},{0,5}},GridLines->Automatic,ImageSize->500],Graphics[{Blue,PointSize[0.025],Point[{k,lambda^k}]}]],{k,0,12,1},ControlPlacement->Top],{600,500},(*forces full width*)Alignment->Center]
+Manipulate[Plot[{0.9^t,1.2^t},{t,0,k},PlotStyle->{{Blue,Thick},{Red,Thick}},PlotLegends->{"Stable Mode: \[Lambda] = 0.9","Unstable Mode: \[Lambda] = 1.2"},AxesLabel->{"Time (t)","Dynamic Mode"},PlotRange->{{0,12},{0,5}},GridLines->Automatic,ImageSize->Large],{k,1,12,1}]
+Animate[Pane[Plot[{0.9^t,1.2^t},{t,0,k},PlotStyle->{{Blue,Thickness[.01]},{Red,Thickness[.01]}},PlotLegends->{Style["Stable Mode: \[Lambda] = 0.9",Bold,12],Style["Unstable Mode: \[Lambda] = 1.2",Bold,12]},AxesLabel->{Style["Time (t)",Bold,12],Style["Dynamic Mode",Bold,12]},PlotRange->{{0,12},{0,5}},GridLines->Automatic,ImageSize->400],{600,350},(*forces full width*)Alignment->Center],{k,1,12,1},ControlPlacement->Top,AnimationRate->1,AnimationRunning->False]
