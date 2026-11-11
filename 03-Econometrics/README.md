@@ -1,4 +1,6 @@
 # Econometrics - EduByAmjad
-Videos for AP Econometrics, IB Econometrics, A-Level & University Econometrics
+
+Videos for University Econometrics - Regression Analysis, Data Simulation, Hypothesis Testing & Optimization.
+Also useful for advanced AP, IB & A-Level Economics students who want to understand regression and data behind the graphs.
 
 Playlist: https://www.youtube.com/@EduByAmjadOfficial
