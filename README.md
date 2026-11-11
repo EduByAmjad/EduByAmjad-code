@@ -6,11 +6,11 @@ Download the code, run it in Mathematica, and follow along with the video.
 Playlist: https://www.youtube.com/@EduByAmjadOfficial
 
 ## Repository Structure
-edubyamjad-code/
+```edubyamjad-code/
 ├── 01-Microeconomics/
 ├── 02-Macroeconomics/
 ├── 03-Econometrics/
-└── 04-Mathematical-Economics/
+└── 04-Mathematical-Economics/```
 
 ## What Is Inside Each Folder?
 
