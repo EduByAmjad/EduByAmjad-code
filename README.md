@@ -12,7 +12,6 @@ EduByAmjad-code/
 ├── 02-Macroeconomics/
 ├── 03-Econometrics/
 └── 04-Mathematical-Economics/
-```
 
 ## What Is Inside Each Folder?
 
